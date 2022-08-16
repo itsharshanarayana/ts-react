@@ -31,14 +31,19 @@ class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplaySta
 
   override render() {
 
-    return (
+    if (this.state.errorMessage && !this.state.lat) return <div>Error: {this.state.errorMessage }</div>
+
+    if (!this.state.errorMessage && this.state.lat) return <div>Latitude: { this.state.lat }</div>
+
+    return <div>Loading ...</div>
+    /*return (
       <div>
         <h2>Welcome to SeasonDisplay!</h2>
         <span>{this.state.lat && this.state.lat}</span>
         <span>{this.state.errorMessage && this.state.errorMessage}</span>
         <p>{this.props.message}</p>
       </div>
-    );
+    );*/
   }
 
   override componentDidMount() {
