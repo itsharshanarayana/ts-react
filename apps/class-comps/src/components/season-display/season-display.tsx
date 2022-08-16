@@ -7,11 +7,12 @@ interface SeasonDisplayProps {
 
 interface SeasonDisplayState {
   lat: number | null;
+  errorMessage: string;
 }
 
 class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplayState> {
 
-  override state: SeasonDisplayState = { lat : null }
+  override state: SeasonDisplayState = { lat : null, errorMessage: '' }
 
   constructor(props: SeasonDisplayProps) {
     super(props);
@@ -21,7 +22,10 @@ class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplaySta
         console.log('Successfully processed:', position.coords)
         this.setState({lat: position.coords.latitude});
       },
-      (err) => console.log('Errored out:', err)
+      (err) => {
+        console.log('Errored out:', err)
+        this.setState({ errorMessage: err.message })
+      }
     );
   }
 
@@ -30,7 +34,8 @@ class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplaySta
     return (
       <div>
         <h2>Welcome to SeasonDisplay!</h2>
-        <p>{this.state.lat && this.state.lat}</p>
+        <span>{this.state.lat && this.state.lat}</span>
+        <span>{this.state.errorMessage && this.state.errorMessage}</span>
         <p>{this.props.message}</p>
       </div>
     );
