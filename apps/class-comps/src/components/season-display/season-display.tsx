@@ -12,11 +12,21 @@ interface SeasonDisplayState {
 
 class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplayState> {
 
+  // creates constructor and initializes state within it.
   override state: SeasonDisplayState = { lat : null, errorMessage: '' }
 
-  constructor(props: SeasonDisplayProps) {
-    super(props);
+  override render() {
 
+    if (this.state.errorMessage && !this.state.lat) return <div>Error: {this.state.errorMessage }</div>
+
+    if (!this.state.errorMessage && this.state.lat) return <div>Latitude: { this.state.lat }</div>
+
+    return <div>Loading ...</div>
+
+  }
+
+  override componentDidMount() {
+    console.log("SeasonDisplay component mounted!");
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         console.log('Successfully processed:', position.coords)
@@ -29,25 +39,15 @@ class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplaySta
     );
   }
 
-  override render() {
-
-    if (this.state.errorMessage && !this.state.lat) return <div>Error: {this.state.errorMessage }</div>
-
-    if (!this.state.errorMessage && this.state.lat) return <div>Latitude: { this.state.lat }</div>
-
-    return <div>Loading ...</div>
-    /*return (
-      <div>
-        <h2>Welcome to SeasonDisplay!</h2>
-        <span>{this.state.lat && this.state.lat}</span>
-        <span>{this.state.errorMessage && this.state.errorMessage}</span>
-        <p>{this.props.message}</p>
-      </div>
-    );*/
+  override componentDidUpdate(prevProps: Readonly<SeasonDisplayProps>, prevState: Readonly<SeasonDisplayState>, snapshot?: any) {
+    console.log('prevProps: ', prevProps);
+    console.log('prevState: ', prevState);
+    console.log('snapshot: ', snapshot);
+    console.log('componentDidUpdate()... component is going to be re-rendered...');
   }
 
-  override componentDidMount() {
-    console.log("SeasonDisplay component mounted!");
+  override componentWillUnmount() {
+    console.log('componentWillUnmount() ...')
   }
 }
 
