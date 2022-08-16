@@ -1,14 +1,21 @@
 import React from "react";
 
 /* eslint-disable-next-line */
-export interface SeasonDisplayProps {}
+interface SeasonDisplayProps {}
 
-const SeasonDisplay: React.FC<SeasonDisplayProps> = (props) => {
-  return (
-    <div>
-      <h1>Welcome to SeasonDisplay!</h1>
-    </div>
-  );
+interface SeasonDisplayState {}
+
+class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplayState> {
+
+  override state = {}
+
+  override render() {
+    return (
+      <div>
+        <h1>Welcome to SeasonDisplay!</h1>
+      </div>
+    );
+  }
 }
 
 export default SeasonDisplay;
