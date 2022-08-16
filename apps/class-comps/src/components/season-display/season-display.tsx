@@ -1,11 +1,11 @@
-import styles from './season-display.module.css';
+import React from "react";
 
 /* eslint-disable-next-line */
 export interface SeasonDisplayProps {}
 
-export function SeasonDisplay(props: SeasonDisplayProps) {
+const SeasonDisplay: React.FC<SeasonDisplayProps> = (props) => {
   return (
-    <div className={styles['container']}>
+    <div>
       <h1>Welcome to SeasonDisplay!</h1>
     </div>
   );
