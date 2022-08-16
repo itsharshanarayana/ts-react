@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <>
       <h2>Class based components!</h2>
       {position}
-      <SeasonDisplay />
+      <SeasonDisplay message={"Hello, there!"}/>
       <div />
     </>
   );

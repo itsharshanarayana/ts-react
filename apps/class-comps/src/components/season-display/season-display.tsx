@@ -1,18 +1,25 @@
 import React from "react";
 
 /* eslint-disable-next-line */
-interface SeasonDisplayProps {}
+interface SeasonDisplayProps {
+  message: string;
+}
 
-interface SeasonDisplayState {}
+interface SeasonDisplayState {
+  count: number;
+}
 
 class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplayState> {
 
-  override state = {}
+  override state: SeasonDisplayState = { count: 0 }
 
   override render() {
+
     return (
       <div>
-        <h1>Welcome to SeasonDisplay!</h1>
+        <h2>Welcome to SeasonDisplay!</h2>
+        {this.state.count}
+        {this.props.message}
       </div>
     );
   }
