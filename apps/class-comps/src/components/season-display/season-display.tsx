@@ -30,8 +30,8 @@ class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplaySta
     return (
       <div>
         <h2>Welcome to SeasonDisplay!</h2>
-        {this.state.lat && this.state.lat}
-        {this.props.message}
+        <p>{this.state.lat && this.state.lat}</p>
+        <p>{this.props.message}</p>
       </div>
     );
   }
