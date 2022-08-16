@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/class-comps/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/class-comps",
+        "index": "apps/class-comps/src/index.html",
+        "baseHref": "/",
+        "main": "apps/class-comps/src/main.tsx",
+        "polyfills": "apps/class-comps/src/polyfills.ts",
+        "tsConfig": "apps/class-comps/tsconfig.app.json",
+        "assets": [
+          "apps/class-comps/src/favicon.ico",
+          "apps/class-comps/src/assets"
+        ],
+        "styles": ["apps/class-comps/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/class-comps/src/environments/environment.ts",
+              "with": "apps/class-comps/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "class-comps:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "class-comps:build:development"
+        },
+        "production": {
+          "buildTarget": "class-comps:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/class-comps/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/class-comps"],
+      "options": {
+        "jestConfig": "apps/class-comps/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

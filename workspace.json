@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "class-comps": "apps/class-comps",
+    "class-comps-e2e": "apps/class-comps-e2e",
+    "jsx101": "apps/jsx101",
+    "jsx101-e2e": "apps/jsx101-e2e",
+    "props": "apps/props",
+    "props-e2e": "apps/props-e2e",
+    "redux-ts": "apps/redux-ts",
+    "redux-ts-e2e": "apps/redux-ts-e2e",
+    "redux-ts-v02": "apps/redux-ts-v02",
+    "redux-ts-v02-e2e": "apps/redux-ts-v02-e2e",
+    "rts": "apps/rts",
+    "rts-e2e": "apps/rts-e2e"
+  }
+}
