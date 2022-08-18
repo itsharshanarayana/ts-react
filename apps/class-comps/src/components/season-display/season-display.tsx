@@ -3,8 +3,8 @@ import React from "react";
 /* eslint-disable-next-line */
 interface SeasonDisplayProps {
   month: number;
-  latitude: number | null;
-  errorMessage: string | null;
+  errorMessage?: string;
+  latitude: number;
 }
 
 interface SeasonDisplayState {
@@ -14,45 +14,29 @@ interface SeasonDisplayState {
 
 class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplayState> {
 
-  // creates constructor and initializes state within it.
-  override state: SeasonDisplayState = { lat : null, errorMessage: '' }
-
-  override render() {
-
-    /*if (this.state.errorMessage && !this.state.lat) return <div>Error: {this.state.errorMessage }</div>*/
-    if (this.props.errorMessage && !this.props.latitude) return <div>Error: { this.props.errorMessage }</div>
-
-    /*if (!this.state.errorMessage && this.state.lat) {*/
-    if (!this.props.errorMessage && this.props.latitude) {
-      const latitude = "Latitude: " + this.props.latitude;
-      const season = this.getSeason(this.props.latitude, this.props.month)
-      return this.props.latitude;
-    }
-
-    return <div>Loading ...</div>
-
-  }
-
-
-  getSeason = (lat: number | null, month: number): string => {
+  getSeason = (lat: number, month: number): string => {
     console.log('Latitude: ', lat)
     console.log('Month:', month)
-    return '';
+
+    if ( month > 2 && month < 9 ) {
+      return lat > 0 ?  'summer' : 'winter';
+    } else {
+      return lat < 0 ? 'winter' : 'summer';
+    }
   }
 
-  /*override componentDidMount() {
-    console.log("SeasonDisplay component mounted!");
-    window.navigator.geolocation.getCurrentPosition(
-      (position) => {
-        console.log('Successfully processed:', position.coords)
-        this.setState({lat: position.coords.latitude});
-      },
-      (err) => {
-        console.log('Errored out:', err)
-        this.setState({ errorMessage: err.message })
-      }
+  override render() {
+    const season = this.getSeason(this.props.latitude, this.props.month);
+    const text = season === 'winter' ? 'Burr, it is chilly' : 'Lets hit the beach';
+    const icon = season === 'winter' ? 'snowflake' : 'sun';
+    return (
+      <div>
+        <i className={`${icon} icon`} />
+        <h3>{text}</h3>
+        <i className={`${icon} icon`} />
+      </div>
     );
-  }*/
+  }
 
   override componentDidUpdate(prevProps: Readonly<SeasonDisplayProps>, prevState: Readonly<SeasonDisplayState>, snapshot?: any) {
     console.log('prevProps: ', prevProps);

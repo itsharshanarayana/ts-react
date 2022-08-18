@@ -1,12 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+
 import React from "react";
 import SeasonDisplay from "../components/season-display/season-display";
 
-interface AppProps {}
+interface AppProps {
+  default?: string;
+}
+
 interface AppState {
   lat: number | null;
-  errorMessage: string | null;
+  errorMessage?: string;
 
 }
 
@@ -30,17 +33,17 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   override render() {
-    return (
-      <>
-        <h2>Class based components!</h2>
-        <SeasonDisplay latitude={this.state.lat}
-                       month={new Date().getMonth()}
-                       errorMessage={this.state.errorMessage}
-        />
-        <div/>
-      </>
-    );
+
+    if (this.state.errorMessage && !this.state.lat) return <div>Error: { this.state.errorMessage }</div>
+
+    if (!this.state.errorMessage && this.state.lat) {
+      return <SeasonDisplay month={new Date().getMonth()} latitude={this.state.lat} />
+    }
+
+    return <div>Loading ...</div>
+
   }
+
 }
 
 export default App;
