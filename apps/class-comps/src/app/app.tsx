@@ -2,6 +2,7 @@
 
 import React from "react";
 import SeasonDisplay from "../components/season-display/season-display";
+import Spinner from "../components/spinner/spinner";
 
 interface AppProps {
   default?: string;
@@ -40,7 +41,7 @@ class App extends React.Component<AppProps, AppState> {
       return <SeasonDisplay month={new Date().getMonth()} latitude={this.state.lat} />
     }
 
-    return <div>Loading ...</div>
+    return <Spinner message="Please accept location request!" />
 
   }
 

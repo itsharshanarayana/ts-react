@@ -5,3 +5,44 @@
  * .container {
  * }
 */
+.icon-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+ /* color: orangered;*/
+}
+
+.icon-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  /*color: orangered;*/
+}
+
+.season-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.winter {
+  background-color: aliceblue;
+}
+
+.summer {
+  background-color: bisque;
+}
+
+.sun {
+  color: orangered;
+}
+
+.snowflake {
+  color: deepskyblue;
+}
+
+.icon-left.winter>i {
+  color: deepskyblue;
+
+}
