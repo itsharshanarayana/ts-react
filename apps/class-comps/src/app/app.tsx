@@ -33,7 +33,7 @@ class App extends React.Component<AppProps, AppState> {
     );
   }
 
-  override render() {
+  renderContent = () => {
 
     if (this.state.errorMessage && !this.state.lat) return <div>Error: { this.state.errorMessage }</div>
 
@@ -42,6 +42,23 @@ class App extends React.Component<AppProps, AppState> {
     }
 
     return <Spinner message="Please accept location request!" />
+  }
+
+  override render() {
+
+    /*if (this.state.errorMessage && !this.state.lat) return <div>Error: { this.state.errorMessage }</div>
+
+    if (!this.state.errorMessage && this.state.lat) {
+      return <SeasonDisplay month={new Date().getMonth()} latitude={this.state.lat} />
+    }
+
+    return <Spinner message="Please accept location request!" />*/
+
+    return (
+      <div>
+        {this.renderContent()}
+      </div>
+    );
 
   }
 
