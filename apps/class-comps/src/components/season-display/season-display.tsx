@@ -2,7 +2,9 @@ import React from "react";
 
 /* eslint-disable-next-line */
 interface SeasonDisplayProps {
-  message: string;
+  month: number;
+  latitude: number | null;
+  errorMessage: string | null;
 }
 
 interface SeasonDisplayState {
@@ -17,15 +19,28 @@ class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplaySta
 
   override render() {
 
-    if (this.state.errorMessage && !this.state.lat) return <div>Error: {this.state.errorMessage }</div>
+    /*if (this.state.errorMessage && !this.state.lat) return <div>Error: {this.state.errorMessage }</div>*/
+    if (this.props.errorMessage && !this.props.latitude) return <div>Error: { this.props.errorMessage }</div>
 
-    if (!this.state.errorMessage && this.state.lat) return <div>Latitude: { this.state.lat }</div>
+    /*if (!this.state.errorMessage && this.state.lat) {*/
+    if (!this.props.errorMessage && this.props.latitude) {
+      const latitude = "Latitude: " + this.props.latitude;
+      const season = this.getSeason(this.props.latitude, this.props.month)
+      return this.props.latitude;
+    }
 
     return <div>Loading ...</div>
 
   }
 
-  override componentDidMount() {
+
+  getSeason = (lat: number | null, month: number): string => {
+    console.log('Latitude: ', lat)
+    console.log('Month:', month)
+    return '';
+  }
+
+  /*override componentDidMount() {
     console.log("SeasonDisplay component mounted!");
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -37,7 +52,7 @@ class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplaySta
         this.setState({ errorMessage: err.message })
       }
     );
-  }
+  }*/
 
   override componentDidUpdate(prevProps: Readonly<SeasonDisplayProps>, prevState: Readonly<SeasonDisplayState>, snapshot?: any) {
     console.log('prevProps: ', prevProps);
