@@ -42,9 +42,9 @@ class SeasonDisplay extends React.Component<SeasonDisplayProps, SeasonDisplaySta
     console.log('Month:', month)
 
     if (month > 2 && month < 9) {
-      return lat > 0 ? 'winter' : 'summer';
+      return lat > 0 ? 'summer' : 'winter';
     } else {
-      return lat < 0 ? 'summer' : 'winter';
+      return lat < 0 ? 'winter' : 'summer';
     }
   }
 
