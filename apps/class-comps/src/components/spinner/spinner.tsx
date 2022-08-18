@@ -14,8 +14,8 @@ const Spinner: React.FC<SpinnerProps> = ({message}) => {
   );
 }
 
-export default Spinner;
-
 Spinner.defaultProps = {
   message: 'Loading ...'
 }
+
+export default Spinner;
