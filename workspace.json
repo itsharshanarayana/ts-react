@@ -6,6 +6,8 @@
     "class-comps-e2e": "apps/class-comps-e2e",
     "jsx101": "apps/jsx101",
     "jsx101-e2e": "apps/jsx101-e2e",
+    "pics": "apps/pics",
+    "pics-e2e": "apps/pics-e2e",
     "props": "apps/props",
     "props-e2e": "apps/props-e2e",
     "redux-ts": "apps/redux-ts",
@@ -13,6 +15,8 @@
     "redux-ts-v02": "apps/redux-ts-v02",
     "redux-ts-v02-e2e": "apps/redux-ts-v02-e2e",
     "rts": "apps/rts",
-    "rts-e2e": "apps/rts-e2e"
+    "rts-e2e": "apps/rts-e2e",
+    "user-input": "apps/user-input",
+    "user-input-e2e": "apps/user-input-e2e"
   }
 }

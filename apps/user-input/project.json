@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/user-input/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/user-input",
+        "index": "apps/user-input/src/index.html",
+        "baseHref": "/",
+        "main": "apps/user-input/src/main.tsx",
+        "polyfills": "apps/user-input/src/polyfills.ts",
+        "tsConfig": "apps/user-input/tsconfig.app.json",
+        "assets": [
+          "apps/user-input/src/favicon.ico",
+          "apps/user-input/src/assets"
+        ],
+        "styles": ["apps/user-input/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/user-input/src/environments/environment.ts",
+              "with": "apps/user-input/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "user-input:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "user-input:build:development"
+        },
+        "production": {
+          "buildTarget": "user-input:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/user-input/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/user-input"],
+      "options": {
+        "jestConfig": "apps/user-input/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
