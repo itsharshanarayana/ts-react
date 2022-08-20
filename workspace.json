@@ -4,8 +4,12 @@
   "projects": {
     "class-comps": "apps/class-comps",
     "class-comps-e2e": "apps/class-comps-e2e",
+    "itube": "apps/itube",
+    "itube-e2e": "apps/itube-e2e",
     "jsx101": "apps/jsx101",
     "jsx101-e2e": "apps/jsx101-e2e",
+    "mytube": "apps/mytube",
+    "mytube-e2e": "apps/mytube-e2e",
     "pics": "apps/pics",
     "pics-e2e": "apps/pics-e2e",
     "props": "apps/props",
