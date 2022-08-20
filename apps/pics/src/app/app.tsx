@@ -35,7 +35,6 @@ class App extends React.Component<AppProps, AppState> {
   override state: AppState = { images: [] };
 
   onSearchSubmit = async (term: string) => {
-    console.log("Term in app:", term);
     const response = await unsplash.get(`/search/photos`, {
       params: {
         query: term
