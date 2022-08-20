@@ -3,6 +3,7 @@ import React from "react";
 
 /* eslint-disable-next-line */
 export interface SearchBarProps {
+  onSearchSubmit: (term: string) => void;
 }
 
 export interface SearchBarState {
@@ -15,12 +16,12 @@ class SearchBar extends React.Component<SearchBarProps, SearchBarState> {
 
 
   onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ term: event.target.value });
+    this.setState({term: event.target.value});
   }
 
-  onFormSubmit = (event:  React.FormEvent<HTMLFormElement>) => {
+  onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("term data: ", this.state.term);
+    this.props.onSearchSubmit(this.state.term);
   }
 
 
