@@ -9,7 +9,12 @@
   },
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@faker-js/faker": "^7.4.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.10.1",
+    "@mui/styled-engine-sc": "^5.10.1",
     "@types/react-redux": "7.1.24",
     "ag-grid-community": "^28.1.0",
     "ag-grid-react": "^28.1.0",
@@ -22,6 +27,7 @@
     "redux": "4.2.0",
     "redux-thunk": "2.3.0",
     "regenerator-runtime": "0.13.7",
+    "styled-components": "^5.3.5",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
