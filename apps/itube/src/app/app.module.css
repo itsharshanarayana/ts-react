@@ -1,1 +1,9 @@
 /* Your styles goes here. */
+
+.container {
+ /* display: grid;
+  !*grid-template-columns: 2fr;*!
+  !*grid-template-rows: 3fr;*!
+  grid-column: auto;
+  grid-row: auto;*/
+}

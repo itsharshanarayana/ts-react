@@ -1,6 +1,7 @@
 import styles from './search-bar.module.css';
 import React from "react";
-import {Box, FormControl, FormLabel, TextField} from "@mui/material";
+import {Box, FormControl, FormLabel, InputLabel, OutlinedInput, TextField} from "@mui/material";
+import {values} from "ag-grid-community/dist/lib/utils/generic";
 
 /* eslint-disable-next-line */
 interface SearchBarProps {
@@ -13,30 +14,38 @@ interface SearchBarState {
 
 class SearchBar extends React.Component<SearchBarProps, SearchBarState> {
 
-  override state: SearchBarState = { searchTerm: '' };
+  override state: SearchBarState = {searchTerm: ''};
+
   override render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
-        <FormControl>
-          <Box sx={{ width: 500, maxWidth: '100%', }}>
-            <TextField fullWidth
-                       label="Video Search"
-                       id="fullWidth"
-                       onChange={this.onTextFieldChange}
-                       value={this.state.searchTerm}
+      <div className={styles['container']}>
+        <form onSubmit={this.onFormSubmit}>
+          <FormControl fullWidth sx={{m: 1}}>
+            <InputLabel htmlFor="outlined-adornment-amount">Video Search</InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-amount"
+              value={this.state.searchTerm}
+              onChange={this.onInputChange}
+              label="Video Search"
             />
-          </Box>
-        </FormControl>
-      </form>
+          </FormControl>
+        </form>
+      </div>
     );
   }
 
-  onTextFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({searchTerm: event.target.value });
+  onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({searchTerm: event.target.value});
   }
 
+  /*onTextFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({searchTerm: event.target.value });
+  }*/
+
   onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // To avoid default page refresh once the form is submitted.
+    event.preventDefault();
+
+    // Method passed as prop to SearchBar from App.
     this.props.onSearchSubmit(this.state.searchTerm);
   }
 
