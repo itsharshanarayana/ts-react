@@ -1,0 +1,5 @@
+export enum FoodActionTypes {
+  UPDATE_FROZEN = 'UPDATE_FROZEN',
+  UPDATE_MEAT = 'UPDATE_MEAT',
+  UPDATE_PRODUCE = 'UPDATE_PRODUCE'
+}

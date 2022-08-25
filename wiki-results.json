@@ -1,0 +1,104 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "sroffset": 10,
+    "continue": "-||"
+  },
+  "query": {
+    "searchinfo": {
+      "totalhits": 579303
+    },
+    "search": [
+      {
+        "ns": 0,
+        "title": "Computer programming",
+        "pageid": 5311,
+        "size": 31109,
+        "wordcount": 3405,
+        "snippet": "result), usually by designing and building an executable computer <span class=\"searchmatch\">program</span>. <span class=\"searchmatch\">Programming</span> involves tasks such as analysis, generating algorithms, profiling",
+        "timestamp": "2022-08-23T17:00:43Z"
+      },
+      {
+        "ns": 0,
+        "title": "Program",
+        "pageid": 23771,
+        "size": 2804,
+        "wordcount": 323,
+        "snippet": "projects Time management <span class=\"searchmatch\">Program</span>, a part of planning <span class=\"searchmatch\">Programming</span> (music), generating music electronically Radio <span class=\"searchmatch\">programming</span>, act of scheduling content",
+        "timestamp": "2022-04-14T23:36:39Z"
+      },
+      {
+        "ns": 0,
+        "title": "Programming language",
+        "pageid": 23015,
+        "size": 79256,
+        "wordcount": 8773,
+        "snippet": "needed] <span class=\"searchmatch\">Programming</span> languages are one kind of computer language, and are used in computer <span class=\"searchmatch\">programming</span> to implement algorithms. Most <span class=\"searchmatch\">programming</span> languages",
+        "timestamp": "2022-08-16T07:44:14Z"
+      },
+      {
+        "ns": 0,
+        "title": "C (programming language)",
+        "pageid": 6021,
+        "size": 89136,
+        "wordcount": 9770,
+        "snippet": "generally part of &quot;bare metal&quot; <span class=\"searchmatch\">programming</span> (<span class=\"searchmatch\">programming</span> that's independent of any operating system such as most embedded <span class=\"searchmatch\">programming</span>). With few exceptions, implementations",
+        "timestamp": "2022-08-23T10:44:38Z"
+      },
+      {
+        "ns": 0,
+        "title": "Computer program",
+        "pageid": 5783,
+        "size": 123236,
+        "wordcount": 12518,
+        "snippet": "A computer <span class=\"searchmatch\">program</span> is a sequence or set of instructions in a <span class=\"searchmatch\">programming</span> language for a computer to execute. Computer <span class=\"searchmatch\">programs</span> are one component of software",
+        "timestamp": "2022-08-13T15:23:49Z"
+      },
+      {
+        "ns": 0,
+        "title": "Ajax (programming)",
+        "pageid": 1610950,
+        "size": 16233,
+        "wordcount": 1514,
+        "snippet": "utilize JSON instead of XML. Ajax is not a technology, but rather a <span class=\"searchmatch\">programming</span> concept. HTML and CSS can be used in combination to mark up and style",
+        "timestamp": "2022-08-07T11:59:55Z"
+      },
+      {
+        "ns": 0,
+        "title": "Python (programming language)",
+        "pageid": 23862,
+        "size": 147434,
+        "wordcount": 11711,
+        "snippet": "supports multiple <span class=\"searchmatch\">programming</span> paradigms, including structured (particularly procedural), object-oriented and functional <span class=\"searchmatch\">programming</span>. It is often described",
+        "timestamp": "2022-08-15T18:55:29Z"
+      },
+      {
+        "ns": 0,
+        "title": "Linear programming",
+        "pageid": 43730,
+        "size": 58365,
+        "wordcount": 6480,
+        "snippet": "Linear <span class=\"searchmatch\">programming</span> is a special case of mathematical <span class=\"searchmatch\">programming</span> (also known as mathematical optimization). More formally, linear <span class=\"searchmatch\">programming</span> is a technique",
+        "timestamp": "2022-08-19T10:41:38Z"
+      },
+      {
+        "ns": 0,
+        "title": "Java (programming language)",
+        "pageid": 15881,
+        "size": 80117,
+        "wordcount": 7331,
+        "snippet": "object-oriented <span class=\"searchmatch\">programming</span> language that is designed to have as few implementation dependencies as possible. It is a general-purpose <span class=\"searchmatch\">programming</span> language intended",
+        "timestamp": "2022-08-21T16:06:07Z"
+      },
+      {
+        "ns": 0,
+        "title": "Declarative programming",
+        "pageid": 210648,
+        "size": 18552,
+        "wordcount": 1924,
+        "snippet": "science, declarative <span class=\"searchmatch\">programming</span> is a <span class=\"searchmatch\">programming</span> paradigm\u2014a style of building the structure and elements of computer <span class=\"searchmatch\">programs</span>\u2014that expresses the logic",
+        "timestamp": "2022-06-17T08:20:59Z"
+      }
+    ]
+  }
+}

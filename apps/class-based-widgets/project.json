@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/class-based-widgets/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/class-based-widgets",
+        "index": "apps/class-based-widgets/src/index.html",
+        "baseHref": "/",
+        "main": "apps/class-based-widgets/src/main.tsx",
+        "polyfills": "apps/class-based-widgets/src/polyfills.ts",
+        "tsConfig": "apps/class-based-widgets/tsconfig.app.json",
+        "assets": [
+          "apps/class-based-widgets/src/favicon.ico",
+          "apps/class-based-widgets/src/assets"
+        ],
+        "styles": ["apps/class-based-widgets/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/class-based-widgets/src/environments/environment.ts",
+              "with": "apps/class-based-widgets/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "class-based-widgets:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "class-based-widgets:build:development"
+        },
+        "production": {
+          "buildTarget": "class-based-widgets:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/class-based-widgets/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/class-based-widgets"],
+      "options": {
+        "jestConfig": "apps/class-based-widgets/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
