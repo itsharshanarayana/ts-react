@@ -77,6 +77,7 @@ const MySearch: React.FC<MySearchProps> = (props) => {
         snippet={r.snippet}
         pageUrl={`https://en.wikipedia.org?curid=${r.pageid}`}
         pageId={r.pageid}
+        key={r.pageid}
       />
       /*<div className="item" key={r.pageid}>
         <div className="content">
