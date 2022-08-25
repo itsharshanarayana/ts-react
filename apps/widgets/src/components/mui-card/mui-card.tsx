@@ -13,7 +13,7 @@ export interface MuiCardProps {
 const MuiCard: React.FC<MuiCardProps> = ({title, snippet, pageUrl, pageId}) => {
   return (
     <div className={styles['container']} key={pageId}>
-      <Card sx={{ minWidth: 345 }} variant="elevation" style={{backgroundColor: 'aliceblue'}}>
+      <Card sx={{ minWidth: 345 }} variant="elevation" style={{border: '1px solid lightblue'}}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
