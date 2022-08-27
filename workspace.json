@@ -10,6 +10,8 @@
     "itube-e2e": "apps/itube-e2e",
     "jsx101": "apps/jsx101",
     "jsx101-e2e": "apps/jsx101-e2e",
+    "my-dropdown": "apps/my-dropdown",
+    "my-dropdown-e2e": "apps/my-dropdown-e2e",
     "my-reducer-app": "apps/my-reducer-app",
     "my-reducer-app-e2e": "apps/my-reducer-app-e2e",
     "my-streamer": "apps/my-streamer",
