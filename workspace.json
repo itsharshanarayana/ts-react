@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "blog-em-ipsum": "apps/blog-em-ipsum",
+    "blog-em-ipsum-e2e": "apps/blog-em-ipsum-e2e",
     "class-based-widgets": "apps/class-based-widgets",
     "class-based-widgets-e2e": "apps/class-based-widgets-e2e",
     "class-comps": "apps/class-comps",
@@ -40,6 +42,8 @@
     "streams-client": "apps/streams-client",
     "streams-client-e2e": "apps/streams-client-e2e",
     "streams-e2e": "apps/streams-e2e",
+    "ts-react-query-v01": "apps/ts-react-query-v01",
+    "ts-react-query-v01-e2e": "apps/ts-react-query-v01-e2e",
     "ts-redux-test": "apps/ts-redux-test",
     "ts-redux-test-e2e": "apps/ts-redux-test-e2e",
     "user-input": "apps/user-input",

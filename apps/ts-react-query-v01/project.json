@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ts-react-query-v01/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/ts-react-query-v01",
+        "index": "apps/ts-react-query-v01/src/index.html",
+        "baseHref": "/",
+        "main": "apps/ts-react-query-v01/src/main.tsx",
+        "polyfills": "apps/ts-react-query-v01/src/polyfills.ts",
+        "tsConfig": "apps/ts-react-query-v01/tsconfig.app.json",
+        "assets": [
+          "apps/ts-react-query-v01/src/favicon.ico",
+          "apps/ts-react-query-v01/src/assets"
+        ],
+        "styles": ["apps/ts-react-query-v01/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ts-react-query-v01/src/environments/environment.ts",
+              "with": "apps/ts-react-query-v01/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ts-react-query-v01:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ts-react-query-v01:build:development"
+        },
+        "production": {
+          "buildTarget": "ts-react-query-v01:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ts-react-query-v01/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ts-react-query-v01"],
+      "options": {
+        "jestConfig": "apps/ts-react-query-v01/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

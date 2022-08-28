@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/blog-em-ipsum/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/blog-em-ipsum",
+        "index": "apps/blog-em-ipsum/src/index.html",
+        "baseHref": "/",
+        "main": "apps/blog-em-ipsum/src/main.tsx",
+        "polyfills": "apps/blog-em-ipsum/src/polyfills.ts",
+        "tsConfig": "apps/blog-em-ipsum/tsconfig.app.json",
+        "assets": [
+          "apps/blog-em-ipsum/src/favicon.ico",
+          "apps/blog-em-ipsum/src/assets"
+        ],
+        "styles": ["apps/blog-em-ipsum/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/blog-em-ipsum/src/environments/environment.ts",
+              "with": "apps/blog-em-ipsum/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "blog-em-ipsum:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "blog-em-ipsum:build:development"
+        },
+        "production": {
+          "buildTarget": "blog-em-ipsum:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/blog-em-ipsum/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/blog-em-ipsum"],
+      "options": {
+        "jestConfig": "apps/blog-em-ipsum/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
