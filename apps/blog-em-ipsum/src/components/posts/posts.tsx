@@ -4,8 +4,6 @@ import React, {useEffect, useState} from "react";
 import PostDetail from "../post-detail/post-detail";
 import {useQuery, useQueryClient} from "react-query";
 import {fetchPosts} from "../../posts-service";
-import {nextValueFrom} from "nx/src/adapter/rxjs-for-await";
-import {hasPreviousPage} from "react-query/types/core/infiniteQueryBehavior";
 
 const maxPostPage = 10;
 
