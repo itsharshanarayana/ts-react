@@ -7,6 +7,7 @@ import MyDropdown from "../components/my-dropdown/my-dropdown";
 import MuiDropdown from "../components/mui-dropdown/mui-dropdown";
 import MuiAccordion from "../components/mui-accordion/mui-accordion";
 import {Item} from "../types/types";
+import MuiSearch from "../components/mui-search/mui-search";
 
 const items: Item[] = [
   {id: 1, title: 'What is React?', content: 'React is a front end javascript framework'},
@@ -54,7 +55,9 @@ const App: React.FC = () => {
       {/*<MuiDropdown items={options}
                    selected={selected}
                    onSelectedChange={setSelected}/>*/}
-      <MuiAccordion items={items}/>
+      {/*<MuiAccordion items={items}/>*/}
+
+      <MuiSearch />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import styles from './my-search.module.css';
 import React, {useEffect, useState} from "react";
 
 import wikipedia from "../../api/wikipedia";
-import axios from "axios";
 import MuiCard from "../mui-card/mui-card";
 
 /* eslint-disable-next-line */
