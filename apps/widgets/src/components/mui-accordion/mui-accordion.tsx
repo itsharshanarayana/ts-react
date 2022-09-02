@@ -12,22 +12,22 @@ export interface MuiAccordionProps {
 const MuiAccordion: React.FC<MuiAccordionProps> = ({items}) => {
   const [expanded, setExpanded] = React.useState<number>(0);
 
-  const onAccordionChange = (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+  const onAccordionChange = (panel: number) =>
+    (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : 0);
     };
 
-
   const itemsToRender = items.map((i, index) => {
+    const backgroundColor = `${expanded === index ? '#f3fdff' : ''}`
     return (
       <Accordion key={index}
                  expanded={expanded === index}
                  onChange={onAccordionChange(index)}
-                 style={{border: '1px solid lightblue', backgroundColor: `${expanded === index? '#f3fdff' : ''}`}}>
+                 style={{border: '1px solid lightblue', backgroundColor: `${backgroundColor}` }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon/>}
           aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
+          id="panel1bh-header">
           <Typography sx={{width: '33%', flexShrink: 0, color: 'firebrick'}} variant="h6">
             <b>{i.title}</b>
           </Typography>
@@ -42,7 +42,7 @@ const MuiAccordion: React.FC<MuiAccordionProps> = ({items}) => {
   });
   return (
     <div className={styles['container']}>
-      <Typography sx={{ marginTop: '10px', marginBottom: '10px'}} variant="h4">Welcome to MuiAccordion!</Typography>
+      <Typography sx={{marginTop: '10px', marginBottom: '10px'}} variant="h4">Welcome to MuiAccordion!</Typography>
       <div className={styles['marginTop']}>
         {itemsToRender}
       </div>
