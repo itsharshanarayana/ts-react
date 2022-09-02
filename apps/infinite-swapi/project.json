@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/infinite-swapi/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/infinite-swapi",
+        "index": "apps/infinite-swapi/src/index.html",
+        "baseHref": "/",
+        "main": "apps/infinite-swapi/src/main.tsx",
+        "polyfills": "apps/infinite-swapi/src/polyfills.ts",
+        "tsConfig": "apps/infinite-swapi/tsconfig.app.json",
+        "assets": [
+          "apps/infinite-swapi/src/favicon.ico",
+          "apps/infinite-swapi/src/assets"
+        ],
+        "styles": ["apps/infinite-swapi/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/infinite-swapi/src/environments/environment.ts",
+              "with": "apps/infinite-swapi/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "infinite-swapi:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "infinite-swapi:build:development"
+        },
+        "production": {
+          "buildTarget": "infinite-swapi:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/infinite-swapi/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/infinite-swapi"],
+      "options": {
+        "jestConfig": "apps/infinite-swapi/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

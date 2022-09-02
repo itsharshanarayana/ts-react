@@ -8,6 +8,8 @@
     "class-based-widgets-e2e": "apps/class-based-widgets-e2e",
     "class-comps": "apps/class-comps",
     "class-comps-e2e": "apps/class-comps-e2e",
+    "infinite-swapi": "apps/infinite-swapi",
+    "infinite-swapi-e2e": "apps/infinite-swapi-e2e",
     "itube": "apps/itube",
     "itube-e2e": "apps/itube-e2e",
     "jsx101": "apps/jsx101",
