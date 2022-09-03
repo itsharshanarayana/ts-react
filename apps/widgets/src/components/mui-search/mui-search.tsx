@@ -29,6 +29,8 @@ const MuiSearch: React.FC<MuiSearchProps> = (props) => {
       console.log('Exception caught while making API call:', e, wikipedia.toString());
     }
   }
+
+  // API call.
   useEffect(() => {
     console.log('useEffect:', term);
     makeApiCall()
